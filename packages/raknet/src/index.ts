@@ -1,10 +1,9 @@
-import { Socket } from '@serenityjs/raknet-socket';
+import { Raknet } from './Raknet';
 
-const socket = new Socket('127.0.0.1', 19_132);
+const raknet = new Raknet('127.0.0.1');
 
-socket.listen(
-	(error, { buffer, address, port }) => {
-		console.log(buffer, address, port);
-	},
-	(error, { buffer }) => {},
-);
+const started = raknet.start('Hello World!');
+
+if (started) {
+	console.log('Server started!');
+}

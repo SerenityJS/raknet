@@ -28,6 +28,7 @@
 		"packages/*"
 	],
 	"devDependencies": {
+		"@serenityjs/binarystream": "^1.1.4",
 		"cross-env": "^7.0.3",
 		"eslint": "^8.54.0",
 		"eslint-config-neon": "^0.1.57",
