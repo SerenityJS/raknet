@@ -8,7 +8,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"@serenityjs/socket": "^0.0.0"
+		"@serenityjs/raknet-socket": "^0.0.0"
 	},
 	"description": "Raknet in Rust and Typescript",
 	"repository": {

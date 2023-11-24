@@ -994,20 +994,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@serenityjs/raknet-socket@npm:^0.0.0, @serenityjs/raknet-socket@workspace:packages/socket":
+  version: 0.0.0-use.local
+  resolution: "@serenityjs/raknet-socket@workspace:packages/socket"
+  dependencies:
+    "@napi-rs/cli": "npm:^2.16.5"
+    ava: "npm:^5.1.1"
+  languageName: unknown
+  linkType: soft
+
 "@serenityjs/raknet@workspace:packages/raknet":
   version: 0.0.0-use.local
   resolution: "@serenityjs/raknet@workspace:packages/raknet"
   dependencies:
-    "@serenityjs/socket": "npm:^0.0.0"
-  languageName: unknown
-  linkType: soft
-
-"@serenityjs/socket@npm:^0.0.0, @serenityjs/socket@workspace:packages/socket":
-  version: 0.0.0-use.local
-  resolution: "@serenityjs/socket@workspace:packages/socket"
-  dependencies:
-    "@napi-rs/cli": "npm:^2.16.5"
-    ava: "npm:^5.1.1"
+    "@serenityjs/raknet-socket": "npm:^0.0.0"
   languageName: unknown
   linkType: soft
 
