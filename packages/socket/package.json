@@ -1,0 +1,34 @@
+{
+	"name": "@serenityjs/socket",
+	"version": "0.0.0",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"napi": {
+		"name": "socket",
+		"triples": {}
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@napi-rs/cli": "^2.16.5",
+		"ava": "^5.1.1"
+	},
+	"ava": {
+		"timeout": "3m"
+	},
+	"scripts": {
+		"artifacts": "napi artifacts",
+		"build": "napi build --platform --release",
+		"build:debug": "napi build --platform",
+		"dev": "",
+		"prepublishOnly": "napi prepublish -t npm",
+		"test": "ava",
+		"universal": "napi universal",
+		"version": "napi version"
+	},
+	"packageManager": "yarn@4.0.2",
+	"engines": {
+		"node": ">=18",
+		"npm": "please-use-yarn",
+		"yarn": "4.0.2"
+	}
+}

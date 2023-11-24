@@ -1,0 +1,28 @@
+{
+	"name": "@serenityjs/raknet",
+	"version": "0.0.0",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc",
+		"dev": "cross-env NODE_ENV=development ts-node src/index.ts"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"@serenityjs/socket": "^0.0.0"
+	},
+	"description": "Raknet in Rust and Typescript",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SerenityJS/raknet.git"
+	},
+	"keywords": [
+		"Raknet",
+		"Minecraft",
+		"Bedrock"
+	],
+	"author": "SerenityJS",
+	"bugs": {
+		"url": "https://github.com/SerenityJS/raknet/issues"
+	},
+	"homepage": "https://github.com/SerenityJS/raknet#readme"
+}
