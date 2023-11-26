@@ -1,5 +1,5 @@
 {
-	"name": "@serenityjs/raknet",
+	"name": "@serenityjs/raknet-server",
 	"version": "0.0.0",
 	"main": "index.js",
 	"scripts": {
