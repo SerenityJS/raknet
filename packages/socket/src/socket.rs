@@ -23,6 +23,7 @@ pub struct Packet {
   pub buffer: Buffer,
   pub address: String,
   pub port: u16,
+  pub version: u8,
 }
 
 #[napi]
@@ -69,6 +70,7 @@ impl Socket {
         x.set("buffer", ctx.value.buffer).unwrap();
         x.set("address", ctx.value.address).unwrap();
         x.set("port", ctx.value.port).unwrap();
+        x.set("version", ctx.value.version).unwrap();
         vec![x]
       })
     }).unwrap();
@@ -81,6 +83,7 @@ impl Socket {
         x.set("buffer", ctx.value.buffer).unwrap();
         x.set("address", ctx.value.address).unwrap();
         x.set("port", ctx.value.port).unwrap();
+        x.set("version", ctx.value.version).unwrap();
         vec![x]
       })
     }).unwrap();
@@ -104,11 +107,14 @@ impl Socket {
         let (size, src) = socket.recv_from(&mut buf).unwrap();
         let bin = buf[0..size].to_vec();
 
+        let version = if src.is_ipv4() { 4 } else { 6 }; // Gets the IP version
+
         // Creates a new RaknetPacket instance
         let packet = Packet {
           buffer: bin.into(),
           address: src.ip().to_string(),
           port: src.port(),
+          version,
         };
 
         // Calls the incoming callback function
@@ -148,13 +154,14 @@ impl Socket {
   }
 
   #[napi]
-  pub fn send(&mut self, buffer: Buffer, address: String, port: u16) -> Self {
+  pub fn send(&mut self, buffer: Buffer, address: String, port: u16, version: u8) -> Self {
     // Push the packet to the queue
     let mut queue = self.queue.lock().unwrap();
     queue.push(Packet {
       buffer,
       address,
       port,
+      version,
     });
 
     // Return the Socket instance

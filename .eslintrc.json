@@ -14,9 +14,10 @@
 		"eol-last": "error",
 		"semi": "off",
 		"@typescript-eslint/semi": "error",
-		"@typescript-eslint/member-delimiter-style": "error",
+		"@typescript-eslint/member-delimiter-style": "off",
 		"@typescript-eslint/consistent-type-definitions": ["error", "interface"],
 		"@typescript-eslint/lines-between-class-members": "off",
+		"@typescript-eslint/no-floating-promises": "off",
 		"promise/prefer-await-to-callbacks": "off",
 		"promise/prefer-await-to-then": "off",
 		"@typescript-eslint/no-confusing-void-expression": "off",
@@ -27,7 +28,8 @@
 		"tsdoc/syntax": "off",
 		"unicorn/no-abusive-eslint-disable": "off",
 		"@typescript-eslint/ban-tslint-comment": "off",
-		"func-names": "off"
+		"func-names": "off",
+		"no-multi-assign": "off"
 	},
 	"ignorePatterns": ["**/dist/*"]
 }

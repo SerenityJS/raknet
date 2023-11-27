@@ -722,17 +722,18 @@
   resolved "file:packages/protocol"
   dependencies:
     "@serenityjs/binarystream" "^1.1.4"
+    reflect-metadata "^0.1.13"
+
+"@serenityjs/raknet-server@file:C:\\Users\\payto\\OneDrive\\Desktop\\SerenityJS\\raknet\\packages\\server":
+  version "0.0.0"
+  resolved "file:packages/server"
+  dependencies:
+    "@serenityjs/raknet-protocol" "^0.0.0"
+    "@serenityjs/raknet-socket" "^0.0.0"
 
 "@serenityjs/raknet-socket@^0.0.0", "@serenityjs/raknet-socket@file:C:\\Users\\payto\\OneDrive\\Desktop\\SerenityJS\\raknet\\packages\\socket":
   version "0.0.0"
   resolved "file:packages/socket"
-
-"@serenityjs/raknet@file:C:\\Users\\payto\\OneDrive\\Desktop\\SerenityJS\\raknet\\packages\\raknet":
-  version "0.0.0"
-  resolved "file:packages/raknet"
-  dependencies:
-    "@serenityjs/raknet-protocol" "^0.0.0"
-    "@serenityjs/raknet-socket" "^0.0.0"
 
 "@sigstore/bundle@^1.1.0":
   version "1.1.0"

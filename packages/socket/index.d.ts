@@ -7,6 +7,7 @@ export interface Packet {
   buffer: Buffer
   address: string
   port: number
+  version: number
 }
 export class Socket {
   address: string
@@ -24,5 +25,5 @@ export class Socket {
   * Closes the Socket instance.
   */
   close(): void
-  send(buffer: Buffer, address: string, port: number): Socket
+  send(buffer: Buffer, address: string, port: number, version: number): Socket
 }

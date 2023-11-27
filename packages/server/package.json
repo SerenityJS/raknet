@@ -8,6 +8,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
+		"@serenityjs/binarystream": "^1.1.4",
 		"@serenityjs/raknet-protocol": "^0.0.0",
 		"@serenityjs/raknet-socket": "^0.0.0"
 	},
