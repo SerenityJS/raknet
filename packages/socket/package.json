@@ -1,41 +1,45 @@
 {
-	"name": "@serenityjs/raknet-socket",
-	"version": "0.0.0",
-	"main": "index.js",
-	"types": "index.d.ts",
-	"napi": {
-		"name": "socket",
-		"triples": {}
-	},
-	"license": "MIT",
-	"devDependencies": {
-		"@napi-rs/cli": "^2.16.5",
-		"ava": "^5.1.1"
-	},
-	"keywords": [
-		"Raknet",
-		"Minecraft",
-		"Bedrock",
-		"UDP"
-	],
-	"ava": {
-		"timeout": "3m"
-	},
-	"scripts": {
-		"artifacts": "napi artifacts",
-		"build": "napi build --platform --release",
-		"build:debug": "napi build --platform",
-		"dev": "",
-		"prepublishOnly": "napi prepublish -t npm",
-		"test": "ava",
-		"universal": "napi universal",
-		"version": "napi version",
-		"publish": "npm run build & npm publish --access public"
-	},
-	"packageManager": "yarn@4.0.2",
-	"engines": {
-		"node": ">=18",
-		"npm": "please-use-yarn",
-		"yarn": "4.0.2"
-	}
+  "name": "@serenityjs/raknet-socket",
+  "version": "0.0.5",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "napi": {
+    "name": "socket",
+    "triples": {}
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@napi-rs/cli": "^2.16.5",
+    "ava": "^5.1.1"
+  },
+  "keywords": [
+    "Raknet",
+    "Minecraft",
+    "Bedrock",
+    "UDP"
+  ],
+  "ava": {
+    "timeout": "3m"
+  },
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "build": "napi build --platform --release",
+    "build:debug": "napi build --platform",
+    "dev": "",
+    "prepublishOnly": "napi prepublish -t npm",
+    "test": "ava",
+    "universal": "napi universal",
+    "version": "napi version"
+  },
+  "packageManager": "yarn@4.0.2",
+  "engines": {
+    "node": ">=18",
+    "npm": "please-use-yarn",
+    "yarn": "4.0.2"
+  },
+  "optionalDependencies": {
+    "@serenityjs/raknet-socket-win32-x64-msvc": "0.0.5",
+    "@serenityjs/raknet-socket-darwin-x64": "0.0.5",
+    "@serenityjs/raknet-socket-linux-x64-gnu": "0.0.5"
+  }
 }

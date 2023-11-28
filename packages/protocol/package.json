@@ -1,12 +1,11 @@
 {
 	"name": "@serenityjs/raknet-protocol",
-	"version": "0.0.0",
+	"version": "0.0.5",
 	"description": "Raknet protocol",
 	"main": "index.js",
 	"scripts": {
 		"build": "tsc",
-		"dev": "",
-		"publish": "npm run build & npm publish --access public"
+		"dev": ""
 	},
 	"repository": {
 		"type": "git",
