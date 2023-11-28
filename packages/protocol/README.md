@@ -2,7 +2,7 @@
 
 ## About
 
-Raknet protocol contains all the basic Raknet native packets. It also contains some basic constants that are uses with the implemtation.
+Raknet protocol contains all the basic Raknet native packets. It also contains some basic constants that are uses with the implemtation. Documentation can be found on the Raknet protocol [wiki](https://wiki.vg/Raknet_Protocol).
 
 ## Usage
 

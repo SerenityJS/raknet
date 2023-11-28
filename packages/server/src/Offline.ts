@@ -9,6 +9,7 @@ import {
 	OpenConnectionReply1,
 	OpenConnectionRequest2,
 	OpenConnectionReply2,
+	IncompatibleProtocol,
 } from '@serenityjs/raknet-protocol';
 import type { Server } from './Server';
 import { Connection } from './connection';
@@ -64,8 +65,11 @@ class Offline {
 
 		// Checks if the protocol is supported
 		if (request.protocol !== Protocol) {
-			// TODO: Send incompatible protocol packet
-			return;
+			const decline = new IncompatibleProtocol();
+			decline.protocol = Protocol;
+			decline.magic = request.magic;
+			decline.serverGuid = this.server.guid;
+			return this.server.send(decline.serialize(), identifier);
 		}
 
 		// Create a new reply packet
