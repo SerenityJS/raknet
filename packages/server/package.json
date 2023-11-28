@@ -4,7 +4,8 @@
 	"main": "index.js",
 	"scripts": {
 		"build": "tsc",
-		"dev": "cross-env NODE_ENV=development ts-node src/index.ts"
+		"dev": "cross-env NODE_ENV=development ts-node src/index.ts",
+		"publish": "npm run build & npm publish --access public"
 	},
 	"license": "MIT",
 	"dependencies": {

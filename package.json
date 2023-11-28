@@ -7,7 +7,8 @@
 		"dev": "npm run dev --workspaces",
 		"eslint:fix": "eslint packages --ext mjs,js,ts --fix",
 		"eslint:lint": "eslint packages --ext mjs,js,ts",
-		"eslint:check": "eslint --ext .ts packages"
+		"eslint:check": "eslint --ext .ts packages",
+		"publish": "npm run publish --workspaces"
 	},
 	"repository": {
 		"type": "git",
