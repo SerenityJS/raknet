@@ -12,7 +12,10 @@
 		"url": "git+https://github.com/SerenityJS/raknet.git"
 	},
 	"keywords": [
-		"Raknet"
+		"Raknet",
+		"Minecraft",
+		"Bedrock",
+		"UDP"
 	],
 	"author": "SerenityJS",
 	"license": "MIT",

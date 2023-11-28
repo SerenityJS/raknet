@@ -20,7 +20,8 @@
 	"keywords": [
 		"Raknet",
 		"Minecraft",
-		"Bedrock"
+		"Bedrock",
+		"UDP"
 	],
 	"author": "SerenityJS",
 	"bugs": {
