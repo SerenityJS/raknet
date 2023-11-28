@@ -53,7 +53,21 @@ class Offline {
 		pong.timestamp = ping.timestamp;
 		pong.serverGuid = this.server.guid;
 		pong.magic = ping.magic;
-		pong.motd = this.server.motd!;
+		pong.motd =
+			[
+				'MCPE', // MCEE = Minecraft: Education Edition
+				this.server.motd!,
+				this.server.protocol,
+				this.server.version,
+				this.server.connections.size,
+				this.server.maxConnections,
+				this.server.guid,
+				'Serenity Raknet Server',
+				'survival',
+				1,
+				this.server.port,
+				this.server.port + 1,
+			].join(';') + ';';
 
 		// Sends the pong packet to the network identifier
 		return this.server.send(pong.serialize(), identifier);

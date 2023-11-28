@@ -50,6 +50,26 @@ class Server extends EventEmitter<ServerEvents> {
 	 */
 	public readonly connections: Map<string, Connection>;
 	/**
+	 * **maxConnections**
+	 *
+	 * The maximum amount of connections the server can have.
+	 */
+	public readonly maxConnections: number;
+	/**
+	 * **protocol**
+	 *
+	 * The protocol version of the server.
+	 * This can be changed after the server has started.
+	 */
+	public protocol: number | null = null;
+	/**
+	 * **version**
+	 *
+	 * The version of the server.
+	 * This can be changed after the server has started.
+	 */
+	public version: string | null = null;
+	/**
 	 * **motd**
 	 *
 	 * The motd of the server.
@@ -74,6 +94,7 @@ class Server extends EventEmitter<ServerEvents> {
 		this.port = this.socket.port;
 		this.guid = Buffer.allocUnsafe(8).readBigInt64BE();
 		this.connections = new Map();
+		this.maxConnections = maxConnections;
 
 		Offline.server = this;
 	}
@@ -83,12 +104,16 @@ class Server extends EventEmitter<ServerEvents> {
 	 *
 	 * Attempts to start the server. Returns true if the server started successfully.
 	 *
+	 * @param {number} protocol - The protocol version of the server.
+	 * @param {string} version - The version of the server.
 	 * @param {string} motd - The motd of the server.
 	 * @returns {boolean} Whether the server started successfully.
 	 */
-	public start(motd: string): boolean {
-		// Sets the motd of the server
+	public start(protocol: number, version = '1.0.0', motd = 'Raknet Server'): boolean {
+		// Sets the protocol, version, & motd of the server
 		// This allows the motd to be changed after the server has started
+		this.protocol = protocol;
+		this.version = version;
 		this.motd = motd;
 
 		// Attempt to start the server

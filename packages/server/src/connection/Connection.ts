@@ -454,20 +454,30 @@ class Connection {
 	private handleIncomingConnectionRequest(buffer: Buffer): void {
 		// Create a new ConnectionRequest instance and deserialize the buffer
 		const request = new ConnectionRequest(buffer).deserialize();
+
+		// Check if the server is full
+		if (this.server.connections.size >= this.server.maxConnections) {
+			return this.disconnect();
+		}
+
+		// Create a new ConnectionRequestAccepted instance
 		const accepted = new ConnectionRequestAccepted();
 
+		// Set the properties of the accepted packet
 		accepted.clientAddress = this.identifier;
 		accepted.systemIndex = 0;
 		accepted.systemAddresses = [];
 		accepted.requestTimestamp = request.timestamp;
 		accepted.timestamp = BigInt(Date.now());
 
+		// Set the accepted packet to a new frame
 		const frame = new Frame();
 		frame.reliability = Reliability.Unreliable;
 		frame.orderChannel = 0;
 		frame.body = accepted.serialize();
 
-		this.sendFrame(frame, Priority.Immediate);
+		// Send the frame
+		return this.sendFrame(frame, Priority.Immediate);
 	}
 
 	private handleIncomingConnectedPing(buffer: Buffer): void {
