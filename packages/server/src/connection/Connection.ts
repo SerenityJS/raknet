@@ -27,18 +27,18 @@ class Connection {
 	public readonly guid: bigint;
 
 	// Inputs
-	public readonly receivedFrameSequences = new Set<number>();
-	public readonly lostFrameSequences = new Set<number>();
-	public readonly inputHighestSequenceIndex: number[];
-	public readonly fragmentsQueue: Map<number, Map<number, Frame>> = new Map();
-	public readonly inputOrderIndex: number[];
+	protected readonly receivedFrameSequences = new Set<number>();
+	protected readonly lostFrameSequences = new Set<number>();
+	protected readonly inputHighestSequenceIndex: number[];
+	protected readonly fragmentsQueue: Map<number, Map<number, Frame>> = new Map();
+	protected readonly inputOrderIndex: number[];
 	protected inputOrderingQueue: Map<number, Map<number, Frame>> = new Map();
 	protected lastInputSequence = -1;
 
 	// Outputs
-	public readonly outputBackupQueue = new Map<number, Frame[]>();
-	public readonly outputOrderIndex: number[];
-	public readonly outputSequenceIndex: number[];
+	protected readonly outputBackupQueue = new Map<number, Frame[]>();
+	protected readonly outputOrderIndex: number[];
+	protected readonly outputSequenceIndex: number[];
 	protected outputFrameQueue: FrameSet;
 	protected outputSequence = 0;
 	protected outputReliableIndex = 0;

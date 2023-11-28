@@ -14,8 +14,8 @@ import { Server } from '@serenityjs/raknet-server';
 // Create a new server
 const server = new Server('0.0.0.0', 19132);
 
-// Starte the server with a MOTD
-const started = server.start('Hello World!');
+// Starts the server
+const started = server.start(622, '1.20.41', 'Hello World!'); // Protocol, version, motd
 
 // Check if the server started
 if (started) {
