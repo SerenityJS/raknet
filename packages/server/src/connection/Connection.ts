@@ -19,11 +19,31 @@ import {
 import type { Server } from '../Server';
 import type { NetworkIdentifier } from '../types';
 
+/**
+ * **Connection**
+ *
+ * Creates a new connection.
+ */
 class Connection {
 	protected readonly server: Server;
 	protected status = Status.Connecting;
+	/**
+	 * **identifier**
+	 *
+	 * The network identifier of the connection.
+	 */
 	public readonly identifier: NetworkIdentifier;
+	/**
+	 * **mtu**
+	 *
+	 * The maximum transmission unit size for the connection.
+	 */
 	public readonly mtu: number;
+	/**
+	 * **guid**
+	 *
+	 * The guid of the connection.
+	 */
 	public readonly guid: bigint;
 
 	// Inputs
@@ -44,6 +64,14 @@ class Connection {
 	protected outputReliableIndex = 0;
 	protected outputFragmentIndex = 0;
 
+	/**
+	 * Creates a new connection.
+	 *
+	 * @param {Server} server - The server instance
+	 * @param {NetworkIdentifier} identifier - The network identifier
+	 * @param {number} mtu - The maximum transmission unit size
+	 * @param {bigint} guid - The guid of the connection
+	 */
 	public constructor(server: Server, identifier: NetworkIdentifier, mtu: number, guid: bigint) {
 		this.server = server;
 		this.identifier = identifier;
@@ -65,6 +93,25 @@ class Connection {
 		this.outputSequenceIndex = Array.from<number>({ length: 32 }).fill(0);
 	}
 
+	/**
+	 * **getStatus**
+	 *
+	 * Gets the status of the connection.
+	 *
+	 * @returns {Status} The status of the connection
+	 */
+	public getStatus(): Status {
+		return this.status;
+	}
+
+	/**
+	 * **tick**
+	 *
+	 * Ticks the connection.
+	 * Sends ACKs, NACKs and the output queue.
+	 *
+	 * @returns {void}
+	 */
 	public tick(): void {
 		// Check if the client is disconnecting or disconnected
 		if (this.status === Status.Disconnecting || this.status === Status.Disconnected) return;
@@ -94,10 +141,24 @@ class Connection {
 		return this.sendFrameQueue();
 	}
 
+	/**
+	 * **send**
+	 *
+	 * Sends a buffer to the network identifier.
+	 *
+	 * @param {Buffer} buffer - The buffer to send
+	 */
 	public send(buffer: Buffer): void {
 		this.server.send(buffer, this.identifier);
 	}
 
+	/**
+	 * **disconnect**
+	 *
+	 * Disconnects the connection.
+	 *
+	 * @returns {void}
+	 */
 	public disconnect(): void {
 		// Set the status to disconnecting
 		this.status = Status.Disconnecting;
@@ -122,6 +183,13 @@ class Connection {
 		this.status = Status.Disconnected;
 	}
 
+	/**
+	 * **incoming**
+	 *
+	 * Handles an incoming buffer.
+	 *
+	 * @param {Buffer} buffer - The buffer to handle
+	 */
 	public incoming(buffer: Buffer): void {
 		// Reads the header of the packet (u8)
 		// And masks it with 0xf0 to get the header
@@ -151,6 +219,13 @@ class Connection {
 		}
 	}
 
+	/**
+	 * **incomingBatch**
+	 *
+	 * Handles an incoming buffer.
+	 *
+	 * @param {Buffer} buffer - The buffer to handle
+	 */
 	public incomingBatch(buffer: Buffer): void {
 		// Reads the header of the packet (u8)
 		const header = buffer[0];
@@ -375,6 +450,15 @@ class Connection {
 		}
 	}
 
+	/**
+	 * **sendFrame**
+	 *
+	 * Sends a frame to the connection.
+	 *
+	 * @param {Frame} frame - The frame to send
+	 * @param {Priority} priority - The priority of the frame
+	 * @returns {void}
+	 */
 	public sendFrame(frame: Frame, priority: Priority): void {
 		// Check if the packet is sequenced or ordered
 		if (frame.isSequenced()) {
