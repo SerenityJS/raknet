@@ -2,7 +2,7 @@
 
 ## About
 
-Raknet socket is a bare-bones UDP socket that is written in (Rust)[https://www.rust-lang.org/] and uses (NAPI-RS)[https://napi.rs/] to export Node native modules for our Typescript and Javascript use!.
+Raknet socket is a bare-bones UDP socket that is written in [Rust](https://www.rust-lang.org/) and uses [NAPI-RS](https://napi.rs/) to export Node native modules for our Typescript and Javascript use!.
 
 ## Usage
 
