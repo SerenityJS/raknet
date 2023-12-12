@@ -7,8 +7,7 @@
 		"dev": "npm run dev --workspaces",
 		"eslint:fix": "eslint packages --ext mjs,js,ts --fix",
 		"eslint:lint": "eslint packages --ext mjs,js,ts",
-		"eslint:check": "eslint --ext .ts packages",
-		"publish": "echo Make sure the package.json for each package is correct!!! & timeout /t 10 & npm run publish --workspaces"
+		"eslint:check": "eslint --ext .ts packages"
 	},
 	"repository": {
 		"type": "git",
@@ -30,7 +29,6 @@
 		"packages/*"
 	],
 	"devDependencies": {
-		"@serenityjs/binarystream": "^1.1.4",
 		"cross-env": "^7.0.3",
 		"eslint": "^8.54.0",
 		"eslint-config-neon": "^0.1.57",

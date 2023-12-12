@@ -20,10 +20,10 @@ export class Socket {
   /**
   * Listens and receives packets from the socket.
   */
-  listen(incoming: (err: null | Error, result: Packet) => void, outgoing: (err: null | Error, result: Packet) => void): Socket
+  listen(incoming: (err: null | Error, result: Packet) => void, outgoing: (err: null | Error, result: Packet) => void): void
   /**
   * Closes the Socket instance.
   */
   close(): void
-  send(buffer: Buffer, address: string, port: number, version: number): Socket
+  send(buffer: Buffer, address: string, port: number, version: number): void
 }

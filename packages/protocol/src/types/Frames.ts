@@ -1,6 +1,6 @@
+import { DataType } from '@serenityjs/binarystream';
 import type { BinaryStream } from '@serenityjs/binarystream';
 import { Frame } from '../frame';
-import { DataType } from './DataType';
 
 class Frames extends DataType {
 	public static override read(stream: BinaryStream): Frame[] {

@@ -1,5 +1,6 @@
+import { Short, Long } from '@serenityjs/binarystream';
 import { BasePacket, Packet, Serialize } from '../BasePacket';
-import { Long, Short, ServerAddress, Address, SystemAddress } from '../types';
+import { ServerAddress, Address, SystemAddress } from '../types';
 
 @Packet(0x10)
 class ConnectionRequestAccepted extends BasePacket {

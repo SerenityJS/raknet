@@ -1,7 +1,7 @@
 import { Buffer } from 'node:buffer';
+import { DataType } from '@serenityjs/binarystream';
 import type { BinaryStream } from '@serenityjs/binarystream';
 import { MagicBytes } from '../constants';
-import { DataType } from './DataType';
 
 const MagicBuffer = Buffer.from(MagicBytes, 'binary');
 
