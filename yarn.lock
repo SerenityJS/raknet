@@ -708,7 +708,7 @@
   resolved "https://registry.npmjs.org/@serenityjs/binarystream-win32-x64-msvc/-/binarystream-win32-x64-msvc-1.2.3.tgz"
   integrity sha512-FLunUGVk3d6vF62CEc7aO/UK8csGzNnFfXp+Yjn5c/R0KJypyxB5TXobwOgNe1wk2hRATYBRkuRABKkRRutPEQ==
 
-"@serenityjs/binarystream@^1.2.2", "@serenityjs/binarystream@^1.2.3":
+"@serenityjs/binarystream@^1.2.3":
   version "1.2.3"
   resolved "https://registry.npmjs.org/@serenityjs/binarystream/-/binarystream-1.2.3.tgz"
   integrity sha512-JH01RdFFXAKudaMJybiafJISLANHH/kjl7nS6pA0oXu8LlvXVvVHl6ZMkVKjO2rBAhQdhdp/CELFet7ZRLH9FQ==
@@ -721,7 +721,7 @@
   version "1.0.2"
   resolved "file:packages/protocol"
   dependencies:
-    "@serenityjs/binarystream" "^1.2.2"
+    "@serenityjs/binarystream" "^1.2.3"
     reflect-metadata "^0.1.13"
 
 "@serenityjs/raknet-server@file:C:\\Users\\payto\\OneDrive\\Desktop\\SerenityJS\\raknet\\packages\\server":
@@ -733,9 +733,9 @@
     "@serenityjs/raknet-socket" "^1.0.2"
 
 "@serenityjs/raknet-socket-win32-x64-msvc@1.0.2":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@serenityjs/raknet-socket-win32-x64-msvc/-/raknet-socket-win32-x64-msvc-1.0.0.tgz"
-  integrity sha512-5ssiq1Iz4HF1ROy76edDrWAjMU0bWa9gUmIHM+xXZM1qMQVnOi9cfv46AGZKypDzsGA0LUwR/t60AAEvRktbIA==
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@serenityjs/raknet-socket-win32-x64-msvc/-/raknet-socket-win32-x64-msvc-1.0.2.tgz"
+  integrity sha512-nuakvpGkGDxJ9+6Iul2+QiMwluGW0zfBbJnJD2fGwa4ccwo1ptEzZ5V38VCVrj9atgj/drYRhOCJLhxj46Hz+w==
 
 "@serenityjs/raknet-socket@^1.0.2", "@serenityjs/raknet-socket@file:C:\\Users\\payto\\OneDrive\\Desktop\\SerenityJS\\raknet\\packages\\socket":
   version "1.0.2"
