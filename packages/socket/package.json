@@ -1,6 +1,6 @@
 {
   "name": "@serenityjs/raknet-socket",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "types": "index.d.ts",
   "napi": {
@@ -38,8 +38,8 @@
     "yarn": "4.0.2"
   },
   "optionalDependencies": {
-    "@serenityjs/raknet-socket-win32-x64-msvc": "1.0.2",
-    "@serenityjs/raknet-socket-darwin-x64": "1.0.2",
-    "@serenityjs/raknet-socket-linux-x64-gnu": "1.0.2"
+    "@serenityjs/raknet-socket-win32-x64-msvc": "1.0.3",
+    "@serenityjs/raknet-socket-darwin-x64": "1.0.3",
+    "@serenityjs/raknet-socket-linux-x64-gnu": "1.0.3"
   }
 }
