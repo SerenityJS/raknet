@@ -1,5 +1,4 @@
 import type {
-	DataType,
 	Byte,
 	Bool,
 	Uint8,
@@ -27,6 +26,7 @@ import type {
 	VarString,
 	Uuid,
 } from '@serenityjs/binarystream';
+import type { DataType } from './types';
 
 type ValidTypes =
 	| typeof Bool

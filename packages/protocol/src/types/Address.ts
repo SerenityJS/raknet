@@ -1,5 +1,5 @@
 import type { BinaryStream } from '@serenityjs/binarystream';
-import { DataType } from '@serenityjs/binarystream';
+import { DataType } from './DataType';
 
 interface ServerAddress {
 	address: string;

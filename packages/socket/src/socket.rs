@@ -45,16 +45,24 @@ impl Socket {
    * @param address The address to bind to
   */
   #[napi(constructor)]
-  pub fn new(address: String, port: u16) -> Self {
-    let socket = UdpSocket::bind(format!("{}:{}", address, port)).unwrap();
+  pub fn new(address: String, port: u16) -> Result<Self> {
+    let socket = match UdpSocket::bind(format!("{}:{}", address, port)) {
+      Ok(socket) => socket,
+      Err(_) => return Err(
+        Error::new(
+          GenericFailure,
+          "Failed to bind to the address"
+        )
+      )
+    };
 
-    return Socket {
+    Ok(Socket {
       socket: Arc::new(Mutex::new(socket)),
       running: Arc::new(Mutex::new(false)),
       queue: Arc::new(Mutex::new(vec![])),
       address,
       port,
-    }
+    })
   }
 }
 
@@ -146,7 +154,7 @@ impl Socket {
         if !queue.is_empty() {
           // Send the packet, and remove it from the queue
           let packet = queue.remove(0);
-          
+
           match socket.send_to(&packet.buffer.as_ref(), format!("{}:{}", packet.address, packet.port)) {
             Ok(result) => result,
             Err(_) => continue

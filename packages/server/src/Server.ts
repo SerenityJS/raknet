@@ -125,6 +125,7 @@ class Server extends EventEmitter<ServerEvents> {
 			const tick = () =>
 				setTimeout(() => {
 					for (const [, connection] of this.connections) {
+						// Tick the connection
 						connection.tick();
 					}
 

@@ -1,6 +1,9 @@
 import type { Buffer } from 'node:buffer';
 import { Endianness, BinaryStream, Uint8 } from '@serenityjs/binarystream';
 import type { ValidTypes } from './ValidTypes';
+import type { DataType } from './types';
+
+// TODO: Document all this, and probably clean it up a bit.
 
 interface PacketMetadata {
 	endian: Endianness;
@@ -60,7 +63,7 @@ function Packet(id: number) {
 				for (const { name, type, endian, testField } of metadata) {
 					if (testField) {
 						const value = (this as any)[testField!];
-						type.write(this, (this as never)[name], endian); // TODO: add testField value
+						(type as typeof DataType).write(this, (this as never)[name], endian, testField);
 					} else {
 						type.write(this, (this as never)[name], endian);
 					}
@@ -76,7 +79,7 @@ function Packet(id: number) {
 				for (const { name, type, endian, testField } of metadata) {
 					if (testField) {
 						const value = (this as any)[testField!];
-						(this as any)[name] = type.read(this, endian); // TODO: add testField value
+						(this as any)[name] = (type as typeof DataType).read(this, endian, value);
 					} else {
 						(this as any)[name] = type.read(this, endian);
 					}

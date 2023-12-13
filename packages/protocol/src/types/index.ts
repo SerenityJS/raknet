@@ -1,3 +1,4 @@
+export * from './DataType';
 export * from './MTU';
 export * from './Address';
 export * from './Frames';
