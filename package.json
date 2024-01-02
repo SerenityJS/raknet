@@ -3,8 +3,8 @@
 	"name": "@serenityjs/raknet-mono",
 	"main": "index.js",
 	"scripts": {
-		"build": "npm run build --workspaces",
-		"dev": "npm run dev --workspaces",
+		"build": "yarn workspaces run build",
+		"dev": "yarn workspaces run dev",
 		"eslint:fix": "eslint packages --ext mjs,js,ts --fix",
 		"eslint:lint": "eslint packages --ext mjs,js,ts",
 		"eslint:check": "eslint --ext .ts packages"
@@ -38,10 +38,10 @@
 		"ts-node": "^10.9.1",
 		"typescript": "^5.3.2"
 	},
-	"packageManager": "yarn@4.0.2",
+	"packageManager": "yarn@1.22.21",
 	"engines": {
-		"node": ">=18",
-		"npm": "please-use-yarn",
-		"yarn": "4.0.2"
+		"node": ">=18.0.0",
+		"yarn": ">=1.0.0",
+		"npm": "please use yarn instead of npm"
 	}
 }

@@ -7,6 +7,12 @@
 		"build": "tsc",
 		"dev": ""
 	},
+	"packageManager": "yarn@1.22.21",
+	"engines": {
+		"node": ">=18.0.0",
+		"yarn": ">=1.0.0",
+		"npm": "please use yarn instead of npm"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/SerenityJS/raknet.git"
