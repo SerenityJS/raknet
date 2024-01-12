@@ -1,6 +1,6 @@
 {
 	"name": "@serenityjs/raknet-server",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"main": "index.js",
 	"scripts": {
 		"build": "tsc",
@@ -15,7 +15,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@serenityjs/binarystream": "^1.2.3",
-		"@serenityjs/raknet-protocol": "^1.0.3",
+		"@serenityjs/raknet-protocol": "^1.0.4",
 		"@serenityjs/raknet-socket": "^1.0.4"
 	},
 	"description": "Raknet in Rust and Typescript",
