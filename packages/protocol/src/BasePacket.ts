@@ -51,6 +51,9 @@ function SetIdType(type: ValidTypes) {
 	};
 }
 
+// TODO: Clean this up... a lot.
+// Make readable lmao
+
 function Packet(id: number) {
 	return function (target: typeof BasePacket) {
 		target.ID = id;
@@ -63,7 +66,7 @@ function Packet(id: number) {
 				for (const { name, type, endian, testField } of metadata) {
 					if (testField) {
 						const value = (this as any)[testField!];
-						(type as typeof DataType).write(this, (this as never)[name], endian, testField);
+						(type as typeof DataType).write(this, (this as never)[name], endian, value);
 					} else {
 						type.write(this, (this as never)[name], endian);
 					}
