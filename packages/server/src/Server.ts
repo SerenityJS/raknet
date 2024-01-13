@@ -1,6 +1,6 @@
 import { Buffer } from 'node:buffer';
 import { setTimeout, clearTimeout } from 'node:timers';
-import { Bitflags, RaknetTPS } from '@serenityjs/raknet-protocol';
+import { Bitflags, RaknetTickLength } from '@serenityjs/raknet-protocol';
 import type { Packet } from '@serenityjs/raknet-socket';
 import { Socket } from '@serenityjs/raknet-socket';
 import { Offline } from './Offline';
@@ -130,7 +130,7 @@ class Server extends EventEmitter<ServerEvents> {
 					}
 
 					tick();
-				}, RaknetTPS);
+				}, RaknetTickLength);
 
 			// Sets the interval to the tick function
 			this.interval = tick().unref();

@@ -130,6 +130,7 @@ impl Socket {
 
         // Builds the max buffer size, and reads from the socket
         let mut buf = [0; u16::MAX as usize];
+
         let (size, src) = match socket.recv_from(&mut buf) {
           Ok((size, src)) => (size, src),
           Err(_) => continue
@@ -152,16 +153,19 @@ impl Socket {
         // Check if the queue is empty
         let mut queue = queue.lock().unwrap();
         if !queue.is_empty() {
-          // Send the packet, and remove it from the queue
-          let packet = queue.remove(0);
-
-          match socket.send_to(&packet.buffer.as_ref(), format!("{}:{}", packet.address, packet.port)) {
-            Ok(result) => result,
-            Err(_) => continue
-          };
-          
-          // Calls the outgoing callback function
-          tsfn_outgoing.call(Ok(packet), ThreadsafeFunctionCallMode::Blocking);
+          // Loop through the queue
+          for packet in queue.drain(..) {
+            let sent = match socket.send_to(&packet.buffer.as_ref(), format!("{}:{}", packet.address, packet.port)) {
+              Ok(result) => result,
+              Err(_) => continue
+            };
+            
+            // Check if there was any bytes sent
+            if sent > 0 {
+              // Calls the outgoing callback function
+              tsfn_outgoing.call(Ok(packet), ThreadsafeFunctionCallMode::Blocking);
+            }
+          }
         }
       }
     });
