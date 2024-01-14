@@ -1,45 +1,41 @@
 {
-  "name": "@serenityjs/raknet-socket",
-  "version": "1.0.5",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "napi": {
-    "name": "socket",
-    "triples": {}
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@napi-rs/cli": "^2.16.5",
-    "ava": "^5.1.1"
-  },
-  "keywords": [
-    "Raknet",
-    "Minecraft",
-    "Bedrock",
-    "UDP"
-  ],
-  "ava": {
-    "timeout": "3m"
-  },
-  "scripts": {
-    "artifacts": "napi artifacts",
-    "build": "napi build --platform --release",
-    "build:debug": "napi build --platform",
-    "dev": "",
-    "prepublishOnly": "napi prepublish -t npm",
-    "test": "ava",
-    "universal": "napi universal",
-    "version": "napi version"
-  },
-  "packageManager": "yarn@1.22.21",
-  "engines": {
-    "node": ">=18.0.0",
-    "yarn": ">=1.0.0",
-    "npm": "please use yarn instead of npm"
-  },
-  "optionalDependencies": {
-    "@serenityjs/raknet-socket-win32-x64-msvc": "1.0.5",
-    "@serenityjs/raknet-socket-darwin-x64": "1.0.5",
-    "@serenityjs/raknet-socket-linux-x64-gnu": "1.0.5"
-  }
+	"name": "@serenityjs/raknet-socket",
+	"version": "1.0.6",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc",
+		"dev": "cross-env NODE_ENV=development ts-node src/index.ts"
+	},
+	"packageManager": "yarn@1.22.21",
+	"engines": {
+		"node": ">=18.0.0",
+		"yarn": ">=1.0.0",
+		"npm": "please use yarn instead of npm"
+	},
+	"license": "MIT",
+	"description": "Raknet in Rust and Typescript",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SerenityJS/raknet.git"
+	},
+	"keywords": [
+		"Raknet",
+		"Minecraft",
+		"Bedrock",
+		"UDP"
+	],
+	"author": "SerenityJS",
+	"bugs": {
+		"url": "https://github.com/SerenityJS/raknet/issues"
+	},
+	"homepage": "https://github.com/SerenityJS/raknet#readme",
+	"typings": "./dist/index.d.ts",
+	"module": "./dist/index.js",
+	"exports": {
+		"import": "./dist/index.js",
+		"require": "./dist/index.js"
+	},
+	"files": [
+		"dist"
+	]
 }

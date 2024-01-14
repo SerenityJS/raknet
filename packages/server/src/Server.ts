@@ -1,7 +1,7 @@
 import { Buffer } from 'node:buffer';
+import type { RemoteInfo } from 'node:dgram';
 import { setTimeout, clearTimeout } from 'node:timers';
 import { Bitflags, RaknetTickLength } from '@serenityjs/raknet-protocol';
-import type { Packet } from '@serenityjs/raknet-socket';
 import { Socket } from '@serenityjs/raknet-socket';
 import { Offline } from './Offline';
 import type { Connection } from './connection';
@@ -119,7 +119,7 @@ class Server extends EventEmitter<ServerEvents> {
 		// Attempt to start the server
 		try {
 			// Binds the incoming and outgoing functions to the socket
-			this.socket.listen(this.incoming.bind(this), this.outgoing.bind(this));
+			this.socket.listen(this.incoming.bind(this));
 
 			// Ticks the connections
 			const tick = () =>
@@ -165,17 +165,14 @@ class Server extends EventEmitter<ServerEvents> {
 	 * @param {NetworkIdentifier} identifier - The network identifier to send the buffer to.
 	 */
 	public send(buffer: Buffer, identifier: NetworkIdentifier): void {
-		this.socket.send(buffer, identifier.address, identifier.port, identifier.version);
+		this.socket.send(buffer, identifier.address, identifier.port);
 	}
 
-	private incoming(error: Error | null, packet: Packet): void {
-		// Checks if there was an error receiving the packet
-		if (error) {
-			return console.error('failed to receive packet', error);
-		}
-
+	private incoming(buffer: Buffer, rinfo: RemoteInfo): void {
 		// Deconstructs the packet into its buffer, address, port, and version
-		const { buffer, address, port, version } = packet;
+		const { address, port, family } = rinfo;
+		// Constructs the identifier from the address, port, and version
+		const version = family === 'IPv4' ? 4 : 6;
 		// Creates the identifier key from the address and port
 		const identifier: NetworkIdentifier = { address, port, version };
 		const key = `${address}:${port}:${version}`;
@@ -189,13 +186,6 @@ class Server extends EventEmitter<ServerEvents> {
 
 		// Lets the Offline class handle the packet
 		return Offline.incoming(buffer, identifier);
-	}
-
-	private outgoing(error: Error | null, packet: Packet): void {
-		if (error) {
-			return console.error('failed to send packet', error);
-		}
-		// TODO: handle something here possibly???
 	}
 }
 
