@@ -15,6 +15,8 @@ interface PacketMetadata {
 abstract class BasePacket extends BinaryStream {
 	public static ID: number;
 	public static ID_TYPE: ValidTypes = Uint8;
+	public serialized: Buffer | null = null;
+	public deserialized: boolean = false;
 
 	public constructor(buffer?: Buffer) {
 		super(buffer);
@@ -61,6 +63,8 @@ function Packet(id: number) {
 		const properties = Object.getOwnPropertyNames(target.prototype);
 		if (!properties.includes('serialize'))
 			target.prototype.serialize = function () {
+				if (this.serialized) return this.serialized;
+
 				target.ID_TYPE.write(this, target.ID as never);
 				if (!metadata) return this.getBuffer();
 				for (const { name, type, endian, testField } of metadata) {
@@ -72,11 +76,15 @@ function Packet(id: number) {
 					}
 				}
 
-				return this.getBuffer();
+				this.serialized = this.getBuffer();
+
+				return this.serialized;
 			};
 
 		if (!properties.includes('deserialize'))
 			target.prototype.deserialize = function () {
+				if (this.deserialized) return this;
+
 				target.ID_TYPE.read(this);
 				if (!metadata) return this;
 				for (const { name, type, endian, testField } of metadata) {
@@ -87,6 +95,8 @@ function Packet(id: number) {
 						(this as any)[name] = type.read(this, endian);
 					}
 				}
+
+				this.deserialized = true;
 
 				return this;
 			};
