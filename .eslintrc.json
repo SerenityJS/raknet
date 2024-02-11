@@ -29,7 +29,8 @@
 		"unicorn/no-abusive-eslint-disable": "off",
 		"@typescript-eslint/ban-tslint-comment": "off",
 		"func-names": "off",
-		"no-multi-assign": "off"
+		"no-multi-assign": "off",
+		"@typescript-eslint/no-useless-constructor": "off"
 	},
 	"ignorePatterns": ["**/dist/*"]
 }

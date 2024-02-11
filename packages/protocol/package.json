@@ -1,6 +1,6 @@
 {
 	"name": "@serenityjs/raknet-protocol",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "Raknet protocol",
 	"main": "index.js",
 	"scripts": {

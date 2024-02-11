@@ -2,22 +2,20 @@ import type { BinaryStream, Uint16 } from '@serenityjs/binarystream';
 import { Endianness } from '@serenityjs/binarystream';
 
 abstract class DataType {
-	public constructor(...args: any) {
-		throw new Error('DataType.constructor() is not implemented.');
-	}
+	public constructor(..._args: any) {}
 
-	public static read(stream: BinaryStream, endian: Endianness | null | undefined = Endianness.Big, param?: any): any {
-		throw new Error('DataType.read() is not implemented.');
-	}
+	public static read(
+		_stream: BinaryStream,
+		_endian: Endianness | null | undefined = Endianness.Big,
+		_param?: any,
+	): any {}
 
 	public static write(
-		stream: BinaryStream,
-		value: any,
-		endian: Endianness | null | undefined = Endianness.Big,
-		param?: any,
-	): void {
-		throw new Error('DataType.write() is not implemented.');
-	}
+		_stream: BinaryStream,
+		_value: any,
+		_endian: Endianness | null | undefined = Endianness.Big,
+		_param?: any,
+	): void {}
 }
 
 export { DataType };
