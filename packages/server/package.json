@@ -15,7 +15,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@serenityjs/binarystream": "^1.2.3",
-		"@serenityjs/raknet-protocol": "^1.0.5",
+		"@serenityjs/raknet-protocol": "^1.0.6",
 		"@serenityjs/raknet-socket": "^1.0.6"
 	},
 	"description": "Raknet in Rust and Typescript",
