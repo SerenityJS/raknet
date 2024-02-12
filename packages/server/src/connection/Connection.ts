@@ -512,7 +512,7 @@ class Connection {
 		if (priority === Priority.Immediate) return this.sendFrameQueue();
 	}
 
-	private sendFrameQueue(): void {
+	public sendFrameQueue(): void {
 		// Check if the queue is empty
 		if (this.outputFrameQueue.frames.length > 0) {
 			// Set the sequence of the frame set

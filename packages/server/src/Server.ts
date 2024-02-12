@@ -152,6 +152,12 @@ class Server extends EventEmitter<ServerEvents> {
 		// Closes the socket
 		this.socket.close();
 
+		// Send the remaining frames
+		for (const [, connection] of this.connections) {
+			// Send the frame queue
+			connection.sendFrameQueue();
+		}
+
 		// Clears the interval
 		if (this.interval) clearTimeout(this.interval);
 	}
