@@ -149,14 +149,14 @@ class Server extends EventEmitter<ServerEvents> {
 	 * Stops the server.
 	 */
 	public async stop(): Promise<void> {
-		// Closes the socket
-		this.socket.close();
-
 		// Send the remaining frames
 		for (const [, connection] of this.connections) {
 			// Send the frame queue
 			connection.sendFrameQueue();
 		}
+
+		// Closes the socket
+		this.socket.close();
 
 		// Clears the interval
 		if (this.interval) clearTimeout(this.interval);
