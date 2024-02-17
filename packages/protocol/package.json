@@ -1,7 +1,8 @@
 {
 	"name": "@serenityjs/raknet-protocol",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "Raknet protocol",
+	"type": "module",
 	"main": "index.js",
 	"scripts": {
 		"build": "tsc",
@@ -39,7 +40,7 @@
 		"dist"
 	],
 	"dependencies": {
-		"@serenityjs/binarystream": "^1.2.3",
+		"@serenityjs/binarystream": "^1.2.6",
 		"reflect-metadata": "^0.1.13"
 	}
 }

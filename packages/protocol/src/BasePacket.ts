@@ -1,7 +1,7 @@
 import type { Buffer } from 'node:buffer';
 import { Endianness, BinaryStream, Uint8 } from '@serenityjs/binarystream';
-import type { ValidTypes } from './ValidTypes';
-import type { DataType } from './types';
+import type { ValidTypes } from './ValidTypes.js';
+import type { DataType } from './types/index.js';
 
 // TODO: Document all this, and probably clean it up a bit.
 

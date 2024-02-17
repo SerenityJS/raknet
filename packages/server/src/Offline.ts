@@ -11,9 +11,9 @@ import {
 	OpenConnectionReply2,
 	IncompatibleProtocol,
 } from '@serenityjs/raknet-protocol';
-import type { Server } from './Server';
-import { Connection } from './connection';
-import type { NetworkIdentifier } from './types';
+import type { Server } from './Server.js';
+import { Connection } from './connection/index.js';
+import type { NetworkIdentifier } from './types/index.js';
 
 class Offline {
 	public static server: Server;

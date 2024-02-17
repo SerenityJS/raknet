@@ -1,2 +1,2 @@
-export * from './NetworkIdentifier';
-export * from './Server';
+export * from './NetworkIdentifier.js';
+export * from './Server.js';

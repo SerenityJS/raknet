@@ -1,7 +1,7 @@
 import { Buffer } from 'node:buffer';
 import { Long, String16, Endianness } from '@serenityjs/binarystream';
-import { BasePacket, Packet, Serialize } from '../BasePacket';
-import { Magic } from '../types';
+import { BasePacket, Packet, Serialize } from '../BasePacket.js';
+import { Magic } from '../types/index.js';
 
 @Packet(0x1c)
 class UnconnectedPong extends BasePacket {

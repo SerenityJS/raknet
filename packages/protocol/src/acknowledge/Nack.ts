@@ -1,6 +1,6 @@
 import type { Buffer } from 'node:buffer';
 import { BinaryStream, Endianness } from '@serenityjs/binarystream';
-import { Packet, BasePacket } from '../BasePacket';
+import { Packet, BasePacket } from '../BasePacket.js';
 
 @Packet(0xa0)
 class Nack extends BasePacket {

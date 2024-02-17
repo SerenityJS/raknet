@@ -1,7 +1,7 @@
 import { Buffer } from 'node:buffer';
 import { Long, Bool, Short } from '@serenityjs/binarystream';
-import { BasePacket, Packet, Serialize } from '../BasePacket';
-import { Magic } from '../types';
+import { BasePacket, Packet, Serialize } from '../BasePacket.js';
+import { Magic } from '../types/index.js';
 
 @Packet(0x06)
 class OpenConnectionReply1 extends BasePacket {

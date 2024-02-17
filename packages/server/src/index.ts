@@ -1,3 +1,3 @@
-export * from './Server';
-export * from './connection';
-export * from './types';
+export * from './Server.js';
+export * from './connection/index.js';
+export * from './types/index.js';

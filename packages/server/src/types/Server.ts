@@ -1,5 +1,5 @@
 import type { Buffer } from 'node:buffer';
-import type { Connection } from '../connection';
+import type { Connection } from '../connection/index.js';
 
 interface ServerEvents {
 	connect: [Connection];

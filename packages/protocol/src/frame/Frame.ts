@@ -1,6 +1,6 @@
 import type { Buffer } from 'node:buffer';
 import { BinaryStream, Endianness } from '@serenityjs/binarystream';
-import { Reliability, Bitflags } from '../constants';
+import { Reliability, Bitflags } from '../constants/index.js';
 
 class Frame {
 	protected readonly stream: BinaryStream;

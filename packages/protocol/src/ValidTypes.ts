@@ -26,7 +26,7 @@ import type {
 	VarString,
 	Uuid,
 } from '@serenityjs/binarystream';
-import type { DataType } from './types';
+import type { DataType } from './types/index.js';
 
 type ValidTypes =
 	| typeof Bool

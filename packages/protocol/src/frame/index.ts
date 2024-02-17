@@ -1,2 +1,2 @@
-export * from './FrameSet';
-export * from './Frame';
+export * from './FrameSet.js';
+export * from './Frame.js';

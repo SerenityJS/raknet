@@ -1,5 +1,5 @@
-import { BasePacket, Packet, Serialize } from '../BasePacket';
-import { ServerAddress, Address } from '../types';
+import { BasePacket, Packet, Serialize } from '../BasePacket.js';
+import { ServerAddress, Address } from '../types/index.js';
 
 @Packet(0x13)
 class NewIncomingConnection extends BasePacket {

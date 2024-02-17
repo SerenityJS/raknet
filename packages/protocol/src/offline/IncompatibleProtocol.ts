@@ -1,7 +1,7 @@
 import { Buffer } from 'node:buffer';
 import { Uint8, Long } from '@serenityjs/binarystream';
-import { Packet, BasePacket, Serialize } from '../BasePacket';
-import { Magic } from '../types';
+import { Packet, BasePacket, Serialize } from '../BasePacket.js';
+import { Magic } from '../types/index.js';
 
 @Packet(0x19)
 class IncompatibleProtocol extends BasePacket {

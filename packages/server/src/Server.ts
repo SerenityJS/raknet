@@ -3,10 +3,10 @@ import type { RemoteInfo } from 'node:dgram';
 import { setTimeout, clearTimeout } from 'node:timers';
 import { Bitflags, RaknetTickLength } from '@serenityjs/raknet-protocol';
 import { Socket } from '@serenityjs/raknet-socket';
-import { Offline } from './Offline';
-import type { Connection } from './connection';
-import type { NetworkIdentifier, ServerEvents } from './types';
-import { EventEmitter } from './utils';
+import { Offline } from './Offline.js';
+import type { Connection } from './connection/index.js';
+import type { NetworkIdentifier, ServerEvents } from './types/index.js';
+import { EventEmitter } from './utils/index.js';
 
 /**
  * **Raknet Server**

@@ -16,8 +16,8 @@ import {
 	Reliability,
 	NewIncomingConnection,
 } from '@serenityjs/raknet-protocol';
-import type { Server } from '../Server';
-import type { NetworkIdentifier } from '../types';
+import type { Server } from '../Server.js';
+import type { NetworkIdentifier } from '../types/index.js';
 
 /**
  * **Connection**
