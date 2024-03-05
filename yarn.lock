@@ -736,29 +736,29 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.6.1.tgz#9ab8f811930d7af3e3d549183a50884f9eb83f36"
   integrity sha512-UY+FGM/2jjMkzQLn8pxcHGMaVLh9aEitG3zY2CiY7XHdLiz3bZOwa6oDxNqEMv7zZkV+cj5DOdz0cQ1BP5Hjgw==
 
-"@serenityjs/binarystream-darwin-x64@1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@serenityjs/binarystream-darwin-x64/-/binarystream-darwin-x64-1.2.6.tgz#1ae2abfb2679c997a892768a49113e9d7f8b885b"
-  integrity sha512-+mtiyF/lMHFGlPloQq1HIwD4iaP7Vd6uUmQ1pUvz5TWV6s+mPID4JNcMFfU15D2BNn8r6NByH+VRsJEOSeCV5g==
+"@serenityjs/binarystream-darwin-x64@1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@serenityjs/binarystream-darwin-x64/-/binarystream-darwin-x64-1.3.4.tgz#359b227bdf9fc8d2a602b0e27431e2ea33cb90ec"
+  integrity sha512-9pNul7VKXNy9afC4895GJE+Il4eCuidnZWmtrNs//l9Fk8LBO+2Al7O8iDPNRNKMVbXBGvAwEuV+Hshk0ITuIQ==
 
-"@serenityjs/binarystream-linux-x64-gnu@1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@serenityjs/binarystream-linux-x64-gnu/-/binarystream-linux-x64-gnu-1.2.6.tgz#05840b9599e8be6545f342d772f1c53ab9fbc710"
-  integrity sha512-g3lqwObsxvmIW57aN234BMUsxMI4q/Dxh7DQwkhUwRPA0BarXcG7/MU58bVz38X9+X14VQPZloa+sXI432jxsQ==
+"@serenityjs/binarystream-linux-x64-gnu@1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@serenityjs/binarystream-linux-x64-gnu/-/binarystream-linux-x64-gnu-1.3.4.tgz#52bc907f1237a89737e2952484827d87c5586784"
+  integrity sha512-LlOCaIYKp6Tc5qs4ZUR8COsWyiZxBdxmJatvD+x/UKcZJ2iSD/y2v2YVzqB2XyREX1Lvk8AbqX4U5XC7hiMlcw==
 
-"@serenityjs/binarystream-win32-x64-msvc@1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@serenityjs/binarystream-win32-x64-msvc/-/binarystream-win32-x64-msvc-1.2.6.tgz#e88b48d467983d2e35ce35faec6aa50d79cd78f1"
-  integrity sha512-jRdEcllmLU8TmWK9/7mPi3GV6MWgxzIydwRP7ramPGxN7g20x4keI3v1nyCHX/golkqBLtwow8eINQdPRDuerw==
+"@serenityjs/binarystream-win32-x64-msvc@1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@serenityjs/binarystream-win32-x64-msvc/-/binarystream-win32-x64-msvc-1.3.4.tgz#195518e732f2bac4c31ba283f723cceb403b96ad"
+  integrity sha512-/vo+haFEbQUHl/IaBaqIzo9V9/R3dDi/C7BLEoadvg1+2Esks5FNnCITclQSTa7srd658YnRXeU8PAnSSwNHzg==
 
-"@serenityjs/binarystream@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@serenityjs/binarystream/-/binarystream-1.2.6.tgz#512ee6a4fe88da8097759d2bfcc8e45f4eec87b1"
-  integrity sha512-erW/kYHEATvP4ji3TtzNpouainp5+7KYUFGxiH3IhdoO4ne1nV4und0TXlUInDa4wGEMtUhMMLIgOoLv4k+hQg==
+"@serenityjs/binarystream@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@serenityjs/binarystream/-/binarystream-1.3.4.tgz#c728c7d279e7a5d908a47017f4fc6a664884ea76"
+  integrity sha512-WyERQVVpRuLBodwVOfdF2v605z7JE+lYRx2AwlRc/ZuLyM0ci0R/5SI3yhNNfQkOLVskS13WPRN94RqkGseM+Q==
   optionalDependencies:
-    "@serenityjs/binarystream-darwin-x64" "1.2.6"
-    "@serenityjs/binarystream-linux-x64-gnu" "1.2.6"
-    "@serenityjs/binarystream-win32-x64-msvc" "1.2.6"
+    "@serenityjs/binarystream-darwin-x64" "1.3.4"
+    "@serenityjs/binarystream-linux-x64-gnu" "1.3.4"
+    "@serenityjs/binarystream-win32-x64-msvc" "1.3.4"
 
 "@sigstore/bundle@^1.1.0":
   version "1.1.0"
