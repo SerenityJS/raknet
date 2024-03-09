@@ -1,4 +1,4 @@
-import { Short, Long } from '@serenityjs/binarystream';
+import { Short, Long } from '@serenityjs/binaryutils';
 import { BasePacket, Packet, Serialize } from '../BasePacket.js';
 import { ServerAddress, Address, SystemAddress } from '../types/index.js';
 

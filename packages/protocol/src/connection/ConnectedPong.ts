@@ -1,4 +1,4 @@
-import { Long } from '@serenityjs/binarystream';
+import { Long } from '@serenityjs/binaryutils';
 import { BasePacket, Packet, Serialize } from '../BasePacket.js';
 
 @Packet(0x03)

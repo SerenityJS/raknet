@@ -1,4 +1,4 @@
-import type { BinaryStream } from '@serenityjs/binarystream';
+import type { BinaryStream } from '@serenityjs/binaryutils';
 import { Frame } from '../frame/index.js';
 import { DataType } from './DataType.js';
 

@@ -25,7 +25,7 @@ import type {
 	String32,
 	VarString,
 	Uuid,
-} from '@serenityjs/binarystream';
+} from '@serenityjs/binaryutils';
 import type { DataType } from './types/index.js';
 
 type ValidTypes =

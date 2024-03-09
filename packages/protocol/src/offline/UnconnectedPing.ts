@@ -1,5 +1,5 @@
 import { Buffer } from 'node:buffer';
-import { Long } from '@serenityjs/binarystream';
+import { Long } from '@serenityjs/binaryutils';
 import { BasePacket, Packet, Serialize } from '../BasePacket.js';
 import { Magic } from '../types/index.js';
 

@@ -1,4 +1,4 @@
-import { Endianness, Uint24 } from '@serenityjs/binarystream';
+import { Endianness, Uint24 } from '@serenityjs/binaryutils';
 import { BasePacket, Packet, Serialize } from '../BasePacket.js';
 import { Frames } from '../types/index.js';
 import type { Frame } from './Frame.js';

@@ -1,5 +1,5 @@
 import type { Buffer } from 'node:buffer';
-import { BinaryStream, Endianness } from '@serenityjs/binarystream';
+import { BinaryStream, Endianness } from '@serenityjs/binaryutils';
 import { Reliability, Bitflags } from '../constants/index.js';
 
 class Frame {

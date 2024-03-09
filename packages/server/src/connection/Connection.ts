@@ -1,5 +1,5 @@
 import { Buffer } from 'node:buffer';
-import { BinaryStream } from '@serenityjs/binarystream';
+import { BinaryStream } from '@serenityjs/binaryutils';
 import {
 	Frame,
 	Bitflags,

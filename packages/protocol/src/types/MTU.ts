@@ -1,5 +1,5 @@
 import { Buffer } from 'node:buffer';
-import type { BinaryStream } from '@serenityjs/binarystream';
+import type { BinaryStream } from '@serenityjs/binaryutils';
 import { DataType } from './DataType.js';
 
 class MTU extends DataType {

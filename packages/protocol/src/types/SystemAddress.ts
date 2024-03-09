@@ -1,4 +1,4 @@
-import type { BinaryStream } from '@serenityjs/binarystream';
+import type { BinaryStream } from '@serenityjs/binaryutils';
 import { Address } from './Address.js';
 import type { ServerAddress } from './Address.js';
 import { DataType } from './DataType.js';

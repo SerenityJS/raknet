@@ -1,5 +1,5 @@
 import { Buffer } from 'node:buffer';
-import type { BinaryStream } from '@serenityjs/binarystream';
+import type { BinaryStream } from '@serenityjs/binaryutils';
 import { MagicBytes } from '../constants/index.js';
 import { DataType } from './DataType.js';
 
